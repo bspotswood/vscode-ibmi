@@ -84,7 +84,7 @@ export async function runAction(instance: Instance, uris: vscode.Uri | vscode.Ur
       // Then, if we're being called from a local file
       // we fetch the Actions defined from the workspace.
       if (targets[0].workspaceFolder && scheme === `file`) {
-        const localActions = await getLocalActions(targets[0].workspaceFolder);
+        const localActions = await getLocalActions(targets[0].workspaceFolder, uris);
         allActions.push(...localActions);
       }
 
